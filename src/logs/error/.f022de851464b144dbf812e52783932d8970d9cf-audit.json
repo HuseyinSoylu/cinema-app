@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/home/huseyin/cinema-app/src/logs/error/.f022de851464b144dbf812e52783932d8970d9cf-audit.json",
+    "files": [
+        {
+            "date": 1697821954471,
+            "name": "/home/huseyin/cinema-app/src/logs/error/2023-10-20.log",
+            "hash": "1f8e1dcce67cec16b198b7c97457ffd088e8956e5e1c4a07cae648291953d63b"
+        }
+    ],
+    "hashType": "sha256"
+}

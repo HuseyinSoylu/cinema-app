@@ -1,11 +1,15 @@
 import express from "express";
 const router = express.Router();
 
-import CinemaController from "../controllers/CinemaController.js";
-import SalonController from "../controllers/SalonController.js";
-import FilmController from "../controllers/FilmController.js";
-import UserController from "../controllers/UserController.js";
-import TicketController from "../controllers/TicketController.js";
+import {
+  createUserValidation,
+  updateUserValidation,
+} from "../middleware/validations.ts";
+import CinemaController from "../controllers/CinemaController.ts";
+import SalonController from "../controllers/SalonController.ts";
+import FilmController from "../controllers/FilmController.ts";
+import UserController from "../controllers/UserController.ts";
+import TicketController from "../controllers/TicketController.ts";
 
 router.post("/cinemas", CinemaController.createCinema);
 router.get("/cinemas/:id", CinemaController.getCinemaById);
@@ -22,9 +26,9 @@ router.get("/films/:id", FilmController.getFilmById);
 router.put("/films/:id", FilmController.updateFilm);
 router.delete("/films/:id", FilmController.deleteFilm);
 
-router.post("/users", UserController.createUser);
+router.post("/users", createUserValidation, UserController.createUser);
 router.get("/users/:id", UserController.getUserById);
-router.put("/users/:id", UserController.updateUser);
+router.put("/users/:id", updateUserValidation, UserController.updateUser);
 router.delete("/users/:id", UserController.deleteUser);
 
 router.post("/tickets", TicketController.createTicket);

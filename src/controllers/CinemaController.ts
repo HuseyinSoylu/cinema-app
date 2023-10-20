@@ -1,11 +1,9 @@
 import { Request, Response } from "express";
-// import { PrismaClient } from "@prisma/client";
 import { PrismaClient } from "../../prisma/generated/client";
 
 const prisma = new PrismaClient();
 
 class CinemaController {
-  // Create a new cinema
   public async createCinema(req: Request, res: Response): Promise<void> {
     try {
       const { name, location, description } = req.body;
