@@ -159,7 +159,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/huseyin/cinema-app/prisma/generated/client",
+      "value": "/home/huseyin/c2/prisma/generated/client",
       "fromEnvVar": null
     },
     "config": {

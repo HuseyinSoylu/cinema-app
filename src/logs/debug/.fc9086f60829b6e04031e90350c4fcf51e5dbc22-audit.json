@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/home/huseyin/c2/src/logs/debug/.fc9086f60829b6e04031e90350c4fcf51e5dbc22-audit.json",
+    "files": [
+        {
+            "date": 1697835574778,
+            "name": "/home/huseyin/c2/src/logs/debug/2023-10-20.log",
+            "hash": "f05793f829a3e4e5f9cad8b07ace09871daa61af963631064ad06ce3cddd873e"
+        },
+        {
+            "date": 1697835631480,
+            "name": "/home/huseyin/c2/src/logs/debug/2023-10-21.log",
+            "hash": "01349703a3368c4b59c94739d8c6fa85e45d071ed7a021619fc7c8145da35179"
+        },
+        {
+            "date": 1698042103456,
+            "name": "/home/huseyin/c2/src/logs/debug/2023-10-23.log",
+            "hash": "344dcea1550982e4ec090a1ad8aee52756b012b1a21a62cbca55d8df0027e321"
+        }
+    ],
+    "hashType": "sha256"
+}

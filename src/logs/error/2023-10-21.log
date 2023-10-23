@@ -1,0 +1,80 @@
+2023-10-21 00:00:31 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/TicketController.ts[0m:[93m12[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type '(Without<TicketCreateInput, TicketUncheckedCreateInput> & TicketUncheckedCreateInput) | (Without<...> & TicketCreateInput)'.
+  Type '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type 'Without<TicketUncheckedCreateInput, TicketCreateInput> & TicketCreateInput'.
+    Type '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type 'Without<TicketUncheckedCreateInput, TicketCreateInput>'.
+      Types of property 'filmId' are incompatible.
+        Type 'any' is not assignable to type 'never'.
+
+[7m12[0m         data: {
+[7m  [0m [91m        ~~~~[0m
+
+  [96mprisma/generated/client/index.d.ts[0m:[93m6138[0m:[93m5[0m
+    [7m6138[0m     data: XOR<TicketCreateInput, TicketUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: TicketSelect<DefaultArgs>; include?: TicketInclude<DefaultArgs>; data: (Without<TicketCreateInput, TicketUncheckedCreateInput> & TicketUncheckedCreateInput) | (Without<...> & TicketCreateInput); }'
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/TicketController.ts[0m:[93m12[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type '(Without<TicketCreateInput, TicketUncheckedCreateInput> & TicketUncheckedCreateInput) | (Without<...> & TicketCreateInput)'.
+  Type '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type 'Without<TicketUncheckedCreateInput, TicketCreateInput> & TicketCreateInput'.
+    Type '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type 'Without<TicketUncheckedCreateInput, TicketCreateInput>'.
+      Types of property 'filmId' are incompatible.
+        Type 'any' is not assignable to type 'never'.
+
+[7m12[0m         data: {
+[7m  [0m [91m        ~~~~[0m
+
+  [96mprisma/generated/client/index.d.ts[0m:[93m6138[0m:[93m5[0m
+    [7m6138[0m     data: XOR<TicketCreateInput, TicketUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: TicketSelect<DefaultArgs>; include?: TicketInclude<DefaultArgs>; data: (Without<TicketCreateInput, TicketUncheckedCreateInput> & TicketUncheckedCreateInput) | (Without<...> & TicketCreateInput); }'
+
+    at createTSError (/home/huseyin/c2/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/huseyin/c2/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/huseyin/c2/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/huseyin/c2/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/huseyin/c2/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/huseyin/c2/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+2023-10-21 00:00:56 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/TicketController.ts[0m:[93m12[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type '(Without<TicketCreateInput, TicketUncheckedCreateInput> & TicketUncheckedCreateInput) | (Without<...> & TicketCreateInput)'.
+  Type '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type 'Without<TicketUncheckedCreateInput, TicketCreateInput> & TicketCreateInput'.
+    Type '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type 'Without<TicketUncheckedCreateInput, TicketCreateInput>'.
+      Types of property 'filmId' are incompatible.
+        Type 'any' is not assignable to type 'never'.
+
+[7m12[0m         data: {
+[7m  [0m [91m        ~~~~[0m
+
+  [96mprisma/generated/client/index.d.ts[0m:[93m6138[0m:[93m5[0m
+    [7m6138[0m     data: XOR<TicketCreateInput, TicketUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: TicketSelect<DefaultArgs>; include?: TicketInclude<DefaultArgs>; data: (Without<TicketCreateInput, TicketUncheckedCreateInput> & TicketUncheckedCreateInput) | (Without<...> & TicketCreateInput); }'
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/TicketController.ts[0m:[93m12[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type '(Without<TicketCreateInput, TicketUncheckedCreateInput> & TicketUncheckedCreateInput) | (Without<...> & TicketCreateInput)'.
+  Type '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type 'Without<TicketUncheckedCreateInput, TicketCreateInput> & TicketCreateInput'.
+    Type '{ filmId: any; userId: any; seat: any; price: any; paymentId: any; showtime: any; }' is not assignable to type 'Without<TicketUncheckedCreateInput, TicketCreateInput>'.
+      Types of property 'filmId' are incompatible.
+        Type 'any' is not assignable to type 'never'.
+
+[7m12[0m         data: {
+[7m  [0m [91m        ~~~~[0m
+
+  [96mprisma/generated/client/index.d.ts[0m:[93m6138[0m:[93m5[0m
+    [7m6138[0m     data: XOR<TicketCreateInput, TicketUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: TicketSelect<DefaultArgs>; include?: TicketInclude<DefaultArgs>; data: (Without<TicketCreateInput, TicketUncheckedCreateInput> & TicketUncheckedCreateInput) | (Without<...> & TicketCreateInput); }'
+
+    at createTSError (/home/huseyin/c2/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/huseyin/c2/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/huseyin/c2/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/huseyin/c2/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/huseyin/c2/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/huseyin/c2/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
