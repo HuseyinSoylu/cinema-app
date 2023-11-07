@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/home/huseyin/octopus/cinema-app/src/logs/debug/.d372509210804dbcc0095e55073b1327a69f9080-audit.json",
+    "files": [
+        {
+            "date": 1699345964486,
+            "name": "/home/huseyin/octopus/cinema-app/src/logs/debug/2023-11-07.log",
+            "hash": "8d660b30644513ec2cfe74558b05d6b9ebb4d8f1d381b26a1be37f71015a96a2"
+        }
+    ],
+    "hashType": "sha256"
+}

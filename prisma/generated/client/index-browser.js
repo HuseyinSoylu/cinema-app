@@ -110,6 +110,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.CinemaScalarFieldEnum = {
   id: 'id',
   name: 'name',
+  city: 'city',
   location: 'location',
   description: 'description'
 };
@@ -123,8 +124,28 @@ exports.Prisma.SalonScalarFieldEnum = {
 
 exports.Prisma.FilmScalarFieldEnum = {
   id: 'id',
-  title: 'title',
-  description: 'description'
+  ComingSoon: 'ComingSoon',
+  Title: 'Title',
+  Year: 'Year',
+  Rated: 'Rated',
+  Released: 'Released',
+  Runtime: 'Runtime',
+  Genre: 'Genre',
+  Director: 'Director',
+  Writer: 'Writer',
+  Actors: 'Actors',
+  Plot: 'Plot',
+  Language: 'Language',
+  Country: 'Country',
+  Awards: 'Awards',
+  Poster: 'Poster',
+  Metascore: 'Metascore',
+  imdbRating: 'imdbRating',
+  imdbVotes: 'imdbVotes',
+  imdbID: 'imdbID',
+  Type: 'Type',
+  Response: 'Response',
+  Images: 'Images'
 };
 
 exports.Prisma.UserScalarFieldEnum = {

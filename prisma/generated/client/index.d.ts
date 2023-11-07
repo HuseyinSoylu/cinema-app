@@ -1308,6 +1308,7 @@ export namespace Prisma {
   export type CinemaMinAggregateOutputType = {
     id: number | null
     name: string | null
+    city: string | null
     location: string | null
     description: string | null
   }
@@ -1315,6 +1316,7 @@ export namespace Prisma {
   export type CinemaMaxAggregateOutputType = {
     id: number | null
     name: string | null
+    city: string | null
     location: string | null
     description: string | null
   }
@@ -1322,6 +1324,7 @@ export namespace Prisma {
   export type CinemaCountAggregateOutputType = {
     id: number
     name: number
+    city: number
     location: number
     description: number
     _all: number
@@ -1339,6 +1342,7 @@ export namespace Prisma {
   export type CinemaMinAggregateInputType = {
     id?: true
     name?: true
+    city?: true
     location?: true
     description?: true
   }
@@ -1346,6 +1350,7 @@ export namespace Prisma {
   export type CinemaMaxAggregateInputType = {
     id?: true
     name?: true
+    city?: true
     location?: true
     description?: true
   }
@@ -1353,6 +1358,7 @@ export namespace Prisma {
   export type CinemaCountAggregateInputType = {
     id?: true
     name?: true
+    city?: true
     location?: true
     description?: true
     _all?: true
@@ -1447,6 +1453,7 @@ export namespace Prisma {
   export type CinemaGroupByOutputType = {
     id: number
     name: string
+    city: string
     location: string
     description: string | null
     _count: CinemaCountAggregateOutputType | null
@@ -1473,6 +1480,7 @@ export namespace Prisma {
   export type CinemaSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    city?: boolean
     location?: boolean
     description?: boolean
     salons?: boolean | Cinema$salonsArgs<ExtArgs>
@@ -1482,6 +1490,7 @@ export namespace Prisma {
   export type CinemaSelectScalar = {
     id?: boolean
     name?: boolean
+    city?: boolean
     location?: boolean
     description?: boolean
   }
@@ -1500,6 +1509,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       name: string
+      city: string
       location: string
       description: string | null
     }, ExtArgs["result"]["cinema"]>
@@ -1899,6 +1909,7 @@ export namespace Prisma {
   interface CinemaFieldRefs {
     readonly id: FieldRef<"Cinema", 'Int'>
     readonly name: FieldRef<"Cinema", 'String'>
+    readonly city: FieldRef<"Cinema", 'String'>
     readonly location: FieldRef<"Cinema", 'String'>
     readonly description: FieldRef<"Cinema", 'String'>
   }
@@ -3220,20 +3231,78 @@ export namespace Prisma {
 
   export type FilmMinAggregateOutputType = {
     id: number | null
-    title: string | null
-    description: string | null
+    ComingSoon: boolean | null
+    Title: string | null
+    Year: string | null
+    Rated: string | null
+    Released: string | null
+    Runtime: string | null
+    Genre: string | null
+    Director: string | null
+    Writer: string | null
+    Actors: string | null
+    Plot: string | null
+    Language: string | null
+    Country: string | null
+    Awards: string | null
+    Poster: string | null
+    Metascore: string | null
+    imdbRating: string | null
+    imdbVotes: string | null
+    imdbID: string | null
+    Type: string | null
+    Response: string | null
   }
 
   export type FilmMaxAggregateOutputType = {
     id: number | null
-    title: string | null
-    description: string | null
+    ComingSoon: boolean | null
+    Title: string | null
+    Year: string | null
+    Rated: string | null
+    Released: string | null
+    Runtime: string | null
+    Genre: string | null
+    Director: string | null
+    Writer: string | null
+    Actors: string | null
+    Plot: string | null
+    Language: string | null
+    Country: string | null
+    Awards: string | null
+    Poster: string | null
+    Metascore: string | null
+    imdbRating: string | null
+    imdbVotes: string | null
+    imdbID: string | null
+    Type: string | null
+    Response: string | null
   }
 
   export type FilmCountAggregateOutputType = {
     id: number
-    title: number
-    description: number
+    ComingSoon: number
+    Title: number
+    Year: number
+    Rated: number
+    Released: number
+    Runtime: number
+    Genre: number
+    Director: number
+    Writer: number
+    Actors: number
+    Plot: number
+    Language: number
+    Country: number
+    Awards: number
+    Poster: number
+    Metascore: number
+    imdbRating: number
+    imdbVotes: number
+    imdbID: number
+    Type: number
+    Response: number
+    Images: number
     _all: number
   }
 
@@ -3248,20 +3317,78 @@ export namespace Prisma {
 
   export type FilmMinAggregateInputType = {
     id?: true
-    title?: true
-    description?: true
+    ComingSoon?: true
+    Title?: true
+    Year?: true
+    Rated?: true
+    Released?: true
+    Runtime?: true
+    Genre?: true
+    Director?: true
+    Writer?: true
+    Actors?: true
+    Plot?: true
+    Language?: true
+    Country?: true
+    Awards?: true
+    Poster?: true
+    Metascore?: true
+    imdbRating?: true
+    imdbVotes?: true
+    imdbID?: true
+    Type?: true
+    Response?: true
   }
 
   export type FilmMaxAggregateInputType = {
     id?: true
-    title?: true
-    description?: true
+    ComingSoon?: true
+    Title?: true
+    Year?: true
+    Rated?: true
+    Released?: true
+    Runtime?: true
+    Genre?: true
+    Director?: true
+    Writer?: true
+    Actors?: true
+    Plot?: true
+    Language?: true
+    Country?: true
+    Awards?: true
+    Poster?: true
+    Metascore?: true
+    imdbRating?: true
+    imdbVotes?: true
+    imdbID?: true
+    Type?: true
+    Response?: true
   }
 
   export type FilmCountAggregateInputType = {
     id?: true
-    title?: true
-    description?: true
+    ComingSoon?: true
+    Title?: true
+    Year?: true
+    Rated?: true
+    Released?: true
+    Runtime?: true
+    Genre?: true
+    Director?: true
+    Writer?: true
+    Actors?: true
+    Plot?: true
+    Language?: true
+    Country?: true
+    Awards?: true
+    Poster?: true
+    Metascore?: true
+    imdbRating?: true
+    imdbVotes?: true
+    imdbID?: true
+    Type?: true
+    Response?: true
+    Images?: true
     _all?: true
   }
 
@@ -3353,8 +3480,28 @@ export namespace Prisma {
 
   export type FilmGroupByOutputType = {
     id: number
-    title: string
-    description: string | null
+    ComingSoon: boolean
+    Title: string
+    Year: string
+    Rated: string
+    Released: string
+    Runtime: string
+    Genre: string
+    Director: string
+    Writer: string
+    Actors: string
+    Plot: string
+    Language: string
+    Country: string
+    Awards: string
+    Poster: string
+    Metascore: string
+    imdbRating: string
+    imdbVotes: string
+    imdbID: string
+    Type: string
+    Response: string
+    Images: string[]
     _count: FilmCountAggregateOutputType | null
     _avg: FilmAvgAggregateOutputType | null
     _sum: FilmSumAggregateOutputType | null
@@ -3378,16 +3525,56 @@ export namespace Prisma {
 
   export type FilmSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    title?: boolean
-    description?: boolean
+    ComingSoon?: boolean
+    Title?: boolean
+    Year?: boolean
+    Rated?: boolean
+    Released?: boolean
+    Runtime?: boolean
+    Genre?: boolean
+    Director?: boolean
+    Writer?: boolean
+    Actors?: boolean
+    Plot?: boolean
+    Language?: boolean
+    Country?: boolean
+    Awards?: boolean
+    Poster?: boolean
+    Metascore?: boolean
+    imdbRating?: boolean
+    imdbVotes?: boolean
+    imdbID?: boolean
+    Type?: boolean
+    Response?: boolean
+    Images?: boolean
     tickets?: boolean | Film$ticketsArgs<ExtArgs>
     _count?: boolean | FilmCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["film"]>
 
   export type FilmSelectScalar = {
     id?: boolean
-    title?: boolean
-    description?: boolean
+    ComingSoon?: boolean
+    Title?: boolean
+    Year?: boolean
+    Rated?: boolean
+    Released?: boolean
+    Runtime?: boolean
+    Genre?: boolean
+    Director?: boolean
+    Writer?: boolean
+    Actors?: boolean
+    Plot?: boolean
+    Language?: boolean
+    Country?: boolean
+    Awards?: boolean
+    Poster?: boolean
+    Metascore?: boolean
+    imdbRating?: boolean
+    imdbVotes?: boolean
+    imdbID?: boolean
+    Type?: boolean
+    Response?: boolean
+    Images?: boolean
   }
 
   export type FilmInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3403,8 +3590,28 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      title: string
-      description: string | null
+      ComingSoon: boolean
+      Title: string
+      Year: string
+      Rated: string
+      Released: string
+      Runtime: string
+      Genre: string
+      Director: string
+      Writer: string
+      Actors: string
+      Plot: string
+      Language: string
+      Country: string
+      Awards: string
+      Poster: string
+      Metascore: string
+      imdbRating: string
+      imdbVotes: string
+      imdbID: string
+      Type: string
+      Response: string
+      Images: string[]
     }, ExtArgs["result"]["film"]>
     composites: {}
   }
@@ -3801,8 +4008,28 @@ export namespace Prisma {
    */ 
   interface FilmFieldRefs {
     readonly id: FieldRef<"Film", 'Int'>
-    readonly title: FieldRef<"Film", 'String'>
-    readonly description: FieldRef<"Film", 'String'>
+    readonly ComingSoon: FieldRef<"Film", 'Boolean'>
+    readonly Title: FieldRef<"Film", 'String'>
+    readonly Year: FieldRef<"Film", 'String'>
+    readonly Rated: FieldRef<"Film", 'String'>
+    readonly Released: FieldRef<"Film", 'String'>
+    readonly Runtime: FieldRef<"Film", 'String'>
+    readonly Genre: FieldRef<"Film", 'String'>
+    readonly Director: FieldRef<"Film", 'String'>
+    readonly Writer: FieldRef<"Film", 'String'>
+    readonly Actors: FieldRef<"Film", 'String'>
+    readonly Plot: FieldRef<"Film", 'String'>
+    readonly Language: FieldRef<"Film", 'String'>
+    readonly Country: FieldRef<"Film", 'String'>
+    readonly Awards: FieldRef<"Film", 'String'>
+    readonly Poster: FieldRef<"Film", 'String'>
+    readonly Metascore: FieldRef<"Film", 'String'>
+    readonly imdbRating: FieldRef<"Film", 'String'>
+    readonly imdbVotes: FieldRef<"Film", 'String'>
+    readonly imdbID: FieldRef<"Film", 'String'>
+    readonly Type: FieldRef<"Film", 'String'>
+    readonly Response: FieldRef<"Film", 'String'>
+    readonly Images: FieldRef<"Film", 'String[]'>
   }
     
 
@@ -6134,6 +6361,7 @@ export namespace Prisma {
   export const CinemaScalarFieldEnum: {
     id: 'id',
     name: 'name',
+    city: 'city',
     location: 'location',
     description: 'description'
   };
@@ -6153,8 +6381,28 @@ export namespace Prisma {
 
   export const FilmScalarFieldEnum: {
     id: 'id',
-    title: 'title',
-    description: 'description'
+    ComingSoon: 'ComingSoon',
+    Title: 'Title',
+    Year: 'Year',
+    Rated: 'Rated',
+    Released: 'Released',
+    Runtime: 'Runtime',
+    Genre: 'Genre',
+    Director: 'Director',
+    Writer: 'Writer',
+    Actors: 'Actors',
+    Plot: 'Plot',
+    Language: 'Language',
+    Country: 'Country',
+    Awards: 'Awards',
+    Poster: 'Poster',
+    Metascore: 'Metascore',
+    imdbRating: 'imdbRating',
+    imdbVotes: 'imdbVotes',
+    imdbID: 'imdbID',
+    Type: 'Type',
+    Response: 'Response',
+    Images: 'Images'
   };
 
   export type FilmScalarFieldEnum = (typeof FilmScalarFieldEnum)[keyof typeof FilmScalarFieldEnum]
@@ -6242,6 +6490,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'Decimal'
    */
   export type DecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal'>
@@ -6292,6 +6547,7 @@ export namespace Prisma {
     NOT?: CinemaWhereInput | CinemaWhereInput[]
     id?: IntFilter<"Cinema"> | number
     name?: StringFilter<"Cinema"> | string
+    city?: StringFilter<"Cinema"> | string
     location?: StringFilter<"Cinema"> | string
     description?: StringNullableFilter<"Cinema"> | string | null
     salons?: SalonListRelationFilter
@@ -6300,6 +6556,7 @@ export namespace Prisma {
   export type CinemaOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
+    city?: SortOrder
     location?: SortOrder
     description?: SortOrderInput | SortOrder
     salons?: SalonOrderByRelationAggregateInput
@@ -6311,6 +6568,7 @@ export namespace Prisma {
     OR?: CinemaWhereInput[]
     NOT?: CinemaWhereInput | CinemaWhereInput[]
     name?: StringFilter<"Cinema"> | string
+    city?: StringFilter<"Cinema"> | string
     location?: StringFilter<"Cinema"> | string
     description?: StringNullableFilter<"Cinema"> | string | null
     salons?: SalonListRelationFilter
@@ -6319,6 +6577,7 @@ export namespace Prisma {
   export type CinemaOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
+    city?: SortOrder
     location?: SortOrder
     description?: SortOrderInput | SortOrder
     _count?: CinemaCountOrderByAggregateInput
@@ -6334,6 +6593,7 @@ export namespace Prisma {
     NOT?: CinemaScalarWhereWithAggregatesInput | CinemaScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Cinema"> | number
     name?: StringWithAggregatesFilter<"Cinema"> | string
+    city?: StringWithAggregatesFilter<"Cinema"> | string
     location?: StringWithAggregatesFilter<"Cinema"> | string
     description?: StringNullableWithAggregatesFilter<"Cinema"> | string | null
   }
@@ -6395,15 +6655,55 @@ export namespace Prisma {
     OR?: FilmWhereInput[]
     NOT?: FilmWhereInput | FilmWhereInput[]
     id?: IntFilter<"Film"> | number
-    title?: StringFilter<"Film"> | string
-    description?: StringNullableFilter<"Film"> | string | null
+    ComingSoon?: BoolFilter<"Film"> | boolean
+    Title?: StringFilter<"Film"> | string
+    Year?: StringFilter<"Film"> | string
+    Rated?: StringFilter<"Film"> | string
+    Released?: StringFilter<"Film"> | string
+    Runtime?: StringFilter<"Film"> | string
+    Genre?: StringFilter<"Film"> | string
+    Director?: StringFilter<"Film"> | string
+    Writer?: StringFilter<"Film"> | string
+    Actors?: StringFilter<"Film"> | string
+    Plot?: StringFilter<"Film"> | string
+    Language?: StringFilter<"Film"> | string
+    Country?: StringFilter<"Film"> | string
+    Awards?: StringFilter<"Film"> | string
+    Poster?: StringFilter<"Film"> | string
+    Metascore?: StringFilter<"Film"> | string
+    imdbRating?: StringFilter<"Film"> | string
+    imdbVotes?: StringFilter<"Film"> | string
+    imdbID?: StringFilter<"Film"> | string
+    Type?: StringFilter<"Film"> | string
+    Response?: StringFilter<"Film"> | string
+    Images?: StringNullableListFilter<"Film">
     tickets?: TicketListRelationFilter
   }
 
   export type FilmOrderByWithRelationInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrderInput | SortOrder
+    ComingSoon?: SortOrder
+    Title?: SortOrder
+    Year?: SortOrder
+    Rated?: SortOrder
+    Released?: SortOrder
+    Runtime?: SortOrder
+    Genre?: SortOrder
+    Director?: SortOrder
+    Writer?: SortOrder
+    Actors?: SortOrder
+    Plot?: SortOrder
+    Language?: SortOrder
+    Country?: SortOrder
+    Awards?: SortOrder
+    Poster?: SortOrder
+    Metascore?: SortOrder
+    imdbRating?: SortOrder
+    imdbVotes?: SortOrder
+    imdbID?: SortOrder
+    Type?: SortOrder
+    Response?: SortOrder
+    Images?: SortOrder
     tickets?: TicketOrderByRelationAggregateInput
   }
 
@@ -6412,15 +6712,55 @@ export namespace Prisma {
     AND?: FilmWhereInput | FilmWhereInput[]
     OR?: FilmWhereInput[]
     NOT?: FilmWhereInput | FilmWhereInput[]
-    title?: StringFilter<"Film"> | string
-    description?: StringNullableFilter<"Film"> | string | null
+    ComingSoon?: BoolFilter<"Film"> | boolean
+    Title?: StringFilter<"Film"> | string
+    Year?: StringFilter<"Film"> | string
+    Rated?: StringFilter<"Film"> | string
+    Released?: StringFilter<"Film"> | string
+    Runtime?: StringFilter<"Film"> | string
+    Genre?: StringFilter<"Film"> | string
+    Director?: StringFilter<"Film"> | string
+    Writer?: StringFilter<"Film"> | string
+    Actors?: StringFilter<"Film"> | string
+    Plot?: StringFilter<"Film"> | string
+    Language?: StringFilter<"Film"> | string
+    Country?: StringFilter<"Film"> | string
+    Awards?: StringFilter<"Film"> | string
+    Poster?: StringFilter<"Film"> | string
+    Metascore?: StringFilter<"Film"> | string
+    imdbRating?: StringFilter<"Film"> | string
+    imdbVotes?: StringFilter<"Film"> | string
+    imdbID?: StringFilter<"Film"> | string
+    Type?: StringFilter<"Film"> | string
+    Response?: StringFilter<"Film"> | string
+    Images?: StringNullableListFilter<"Film">
     tickets?: TicketListRelationFilter
   }, "id">
 
   export type FilmOrderByWithAggregationInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrderInput | SortOrder
+    ComingSoon?: SortOrder
+    Title?: SortOrder
+    Year?: SortOrder
+    Rated?: SortOrder
+    Released?: SortOrder
+    Runtime?: SortOrder
+    Genre?: SortOrder
+    Director?: SortOrder
+    Writer?: SortOrder
+    Actors?: SortOrder
+    Plot?: SortOrder
+    Language?: SortOrder
+    Country?: SortOrder
+    Awards?: SortOrder
+    Poster?: SortOrder
+    Metascore?: SortOrder
+    imdbRating?: SortOrder
+    imdbVotes?: SortOrder
+    imdbID?: SortOrder
+    Type?: SortOrder
+    Response?: SortOrder
+    Images?: SortOrder
     _count?: FilmCountOrderByAggregateInput
     _avg?: FilmAvgOrderByAggregateInput
     _max?: FilmMaxOrderByAggregateInput
@@ -6433,8 +6773,28 @@ export namespace Prisma {
     OR?: FilmScalarWhereWithAggregatesInput[]
     NOT?: FilmScalarWhereWithAggregatesInput | FilmScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Film"> | number
-    title?: StringWithAggregatesFilter<"Film"> | string
-    description?: StringNullableWithAggregatesFilter<"Film"> | string | null
+    ComingSoon?: BoolWithAggregatesFilter<"Film"> | boolean
+    Title?: StringWithAggregatesFilter<"Film"> | string
+    Year?: StringWithAggregatesFilter<"Film"> | string
+    Rated?: StringWithAggregatesFilter<"Film"> | string
+    Released?: StringWithAggregatesFilter<"Film"> | string
+    Runtime?: StringWithAggregatesFilter<"Film"> | string
+    Genre?: StringWithAggregatesFilter<"Film"> | string
+    Director?: StringWithAggregatesFilter<"Film"> | string
+    Writer?: StringWithAggregatesFilter<"Film"> | string
+    Actors?: StringWithAggregatesFilter<"Film"> | string
+    Plot?: StringWithAggregatesFilter<"Film"> | string
+    Language?: StringWithAggregatesFilter<"Film"> | string
+    Country?: StringWithAggregatesFilter<"Film"> | string
+    Awards?: StringWithAggregatesFilter<"Film"> | string
+    Poster?: StringWithAggregatesFilter<"Film"> | string
+    Metascore?: StringWithAggregatesFilter<"Film"> | string
+    imdbRating?: StringWithAggregatesFilter<"Film"> | string
+    imdbVotes?: StringWithAggregatesFilter<"Film"> | string
+    imdbID?: StringWithAggregatesFilter<"Film"> | string
+    Type?: StringWithAggregatesFilter<"Film"> | string
+    Response?: StringWithAggregatesFilter<"Film"> | string
+    Images?: StringNullableListFilter<"Film">
   }
 
   export type UserWhereInput = {
@@ -6566,6 +6926,7 @@ export namespace Prisma {
 
   export type CinemaCreateInput = {
     name: string
+    city: string
     location: string
     description?: string | null
     salons?: SalonCreateNestedManyWithoutCinemaInput
@@ -6574,6 +6935,7 @@ export namespace Prisma {
   export type CinemaUncheckedCreateInput = {
     id?: number
     name: string
+    city: string
     location: string
     description?: string | null
     salons?: SalonUncheckedCreateNestedManyWithoutCinemaInput
@@ -6581,6 +6943,7 @@ export namespace Prisma {
 
   export type CinemaUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     salons?: SalonUpdateManyWithoutCinemaNestedInput
@@ -6589,6 +6952,7 @@ export namespace Prisma {
   export type CinemaUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     salons?: SalonUncheckedUpdateManyWithoutCinemaNestedInput
@@ -6597,12 +6961,14 @@ export namespace Prisma {
   export type CinemaCreateManyInput = {
     id?: number
     name: string
+    city: string
     location: string
     description?: string | null
   }
 
   export type CinemaUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -6610,6 +6976,7 @@ export namespace Prisma {
   export type CinemaUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -6660,46 +7027,186 @@ export namespace Prisma {
   }
 
   export type FilmCreateInput = {
-    title: string
-    description?: string | null
+    ComingSoon?: boolean
+    Title: string
+    Year: string
+    Rated: string
+    Released: string
+    Runtime: string
+    Genre: string
+    Director: string
+    Writer: string
+    Actors: string
+    Plot: string
+    Language: string
+    Country: string
+    Awards: string
+    Poster: string
+    Metascore: string
+    imdbRating: string
+    imdbVotes: string
+    imdbID: string
+    Type: string
+    Response: string
+    Images?: FilmCreateImagesInput | string[]
     tickets?: TicketCreateNestedManyWithoutFilmInput
   }
 
   export type FilmUncheckedCreateInput = {
     id?: number
-    title: string
-    description?: string | null
+    ComingSoon?: boolean
+    Title: string
+    Year: string
+    Rated: string
+    Released: string
+    Runtime: string
+    Genre: string
+    Director: string
+    Writer: string
+    Actors: string
+    Plot: string
+    Language: string
+    Country: string
+    Awards: string
+    Poster: string
+    Metascore: string
+    imdbRating: string
+    imdbVotes: string
+    imdbID: string
+    Type: string
+    Response: string
+    Images?: FilmCreateImagesInput | string[]
     tickets?: TicketUncheckedCreateNestedManyWithoutFilmInput
   }
 
   export type FilmUpdateInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    ComingSoon?: BoolFieldUpdateOperationsInput | boolean
+    Title?: StringFieldUpdateOperationsInput | string
+    Year?: StringFieldUpdateOperationsInput | string
+    Rated?: StringFieldUpdateOperationsInput | string
+    Released?: StringFieldUpdateOperationsInput | string
+    Runtime?: StringFieldUpdateOperationsInput | string
+    Genre?: StringFieldUpdateOperationsInput | string
+    Director?: StringFieldUpdateOperationsInput | string
+    Writer?: StringFieldUpdateOperationsInput | string
+    Actors?: StringFieldUpdateOperationsInput | string
+    Plot?: StringFieldUpdateOperationsInput | string
+    Language?: StringFieldUpdateOperationsInput | string
+    Country?: StringFieldUpdateOperationsInput | string
+    Awards?: StringFieldUpdateOperationsInput | string
+    Poster?: StringFieldUpdateOperationsInput | string
+    Metascore?: StringFieldUpdateOperationsInput | string
+    imdbRating?: StringFieldUpdateOperationsInput | string
+    imdbVotes?: StringFieldUpdateOperationsInput | string
+    imdbID?: StringFieldUpdateOperationsInput | string
+    Type?: StringFieldUpdateOperationsInput | string
+    Response?: StringFieldUpdateOperationsInput | string
+    Images?: FilmUpdateImagesInput | string[]
     tickets?: TicketUpdateManyWithoutFilmNestedInput
   }
 
   export type FilmUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    ComingSoon?: BoolFieldUpdateOperationsInput | boolean
+    Title?: StringFieldUpdateOperationsInput | string
+    Year?: StringFieldUpdateOperationsInput | string
+    Rated?: StringFieldUpdateOperationsInput | string
+    Released?: StringFieldUpdateOperationsInput | string
+    Runtime?: StringFieldUpdateOperationsInput | string
+    Genre?: StringFieldUpdateOperationsInput | string
+    Director?: StringFieldUpdateOperationsInput | string
+    Writer?: StringFieldUpdateOperationsInput | string
+    Actors?: StringFieldUpdateOperationsInput | string
+    Plot?: StringFieldUpdateOperationsInput | string
+    Language?: StringFieldUpdateOperationsInput | string
+    Country?: StringFieldUpdateOperationsInput | string
+    Awards?: StringFieldUpdateOperationsInput | string
+    Poster?: StringFieldUpdateOperationsInput | string
+    Metascore?: StringFieldUpdateOperationsInput | string
+    imdbRating?: StringFieldUpdateOperationsInput | string
+    imdbVotes?: StringFieldUpdateOperationsInput | string
+    imdbID?: StringFieldUpdateOperationsInput | string
+    Type?: StringFieldUpdateOperationsInput | string
+    Response?: StringFieldUpdateOperationsInput | string
+    Images?: FilmUpdateImagesInput | string[]
     tickets?: TicketUncheckedUpdateManyWithoutFilmNestedInput
   }
 
   export type FilmCreateManyInput = {
     id?: number
-    title: string
-    description?: string | null
+    ComingSoon?: boolean
+    Title: string
+    Year: string
+    Rated: string
+    Released: string
+    Runtime: string
+    Genre: string
+    Director: string
+    Writer: string
+    Actors: string
+    Plot: string
+    Language: string
+    Country: string
+    Awards: string
+    Poster: string
+    Metascore: string
+    imdbRating: string
+    imdbVotes: string
+    imdbID: string
+    Type: string
+    Response: string
+    Images?: FilmCreateImagesInput | string[]
   }
 
   export type FilmUpdateManyMutationInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    ComingSoon?: BoolFieldUpdateOperationsInput | boolean
+    Title?: StringFieldUpdateOperationsInput | string
+    Year?: StringFieldUpdateOperationsInput | string
+    Rated?: StringFieldUpdateOperationsInput | string
+    Released?: StringFieldUpdateOperationsInput | string
+    Runtime?: StringFieldUpdateOperationsInput | string
+    Genre?: StringFieldUpdateOperationsInput | string
+    Director?: StringFieldUpdateOperationsInput | string
+    Writer?: StringFieldUpdateOperationsInput | string
+    Actors?: StringFieldUpdateOperationsInput | string
+    Plot?: StringFieldUpdateOperationsInput | string
+    Language?: StringFieldUpdateOperationsInput | string
+    Country?: StringFieldUpdateOperationsInput | string
+    Awards?: StringFieldUpdateOperationsInput | string
+    Poster?: StringFieldUpdateOperationsInput | string
+    Metascore?: StringFieldUpdateOperationsInput | string
+    imdbRating?: StringFieldUpdateOperationsInput | string
+    imdbVotes?: StringFieldUpdateOperationsInput | string
+    imdbID?: StringFieldUpdateOperationsInput | string
+    Type?: StringFieldUpdateOperationsInput | string
+    Response?: StringFieldUpdateOperationsInput | string
+    Images?: FilmUpdateImagesInput | string[]
   }
 
   export type FilmUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    ComingSoon?: BoolFieldUpdateOperationsInput | boolean
+    Title?: StringFieldUpdateOperationsInput | string
+    Year?: StringFieldUpdateOperationsInput | string
+    Rated?: StringFieldUpdateOperationsInput | string
+    Released?: StringFieldUpdateOperationsInput | string
+    Runtime?: StringFieldUpdateOperationsInput | string
+    Genre?: StringFieldUpdateOperationsInput | string
+    Director?: StringFieldUpdateOperationsInput | string
+    Writer?: StringFieldUpdateOperationsInput | string
+    Actors?: StringFieldUpdateOperationsInput | string
+    Plot?: StringFieldUpdateOperationsInput | string
+    Language?: StringFieldUpdateOperationsInput | string
+    Country?: StringFieldUpdateOperationsInput | string
+    Awards?: StringFieldUpdateOperationsInput | string
+    Poster?: StringFieldUpdateOperationsInput | string
+    Metascore?: StringFieldUpdateOperationsInput | string
+    imdbRating?: StringFieldUpdateOperationsInput | string
+    imdbVotes?: StringFieldUpdateOperationsInput | string
+    imdbID?: StringFieldUpdateOperationsInput | string
+    Type?: StringFieldUpdateOperationsInput | string
+    Response?: StringFieldUpdateOperationsInput | string
+    Images?: FilmUpdateImagesInput | string[]
   }
 
   export type UserCreateInput = {
@@ -6883,6 +7390,7 @@ export namespace Prisma {
   export type CinemaCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    city?: SortOrder
     location?: SortOrder
     description?: SortOrder
   }
@@ -6894,6 +7402,7 @@ export namespace Prisma {
   export type CinemaMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    city?: SortOrder
     location?: SortOrder
     description?: SortOrder
   }
@@ -6901,6 +7410,7 @@ export namespace Prisma {
   export type CinemaMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    city?: SortOrder
     location?: SortOrder
     description?: SortOrder
   }
@@ -6999,6 +7509,19 @@ export namespace Prisma {
     cinemaId?: SortOrder
   }
 
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
+  }
+
   export type TicketListRelationFilter = {
     every?: TicketWhereInput
     some?: TicketWhereInput
@@ -7011,8 +7534,28 @@ export namespace Prisma {
 
   export type FilmCountOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
+    ComingSoon?: SortOrder
+    Title?: SortOrder
+    Year?: SortOrder
+    Rated?: SortOrder
+    Released?: SortOrder
+    Runtime?: SortOrder
+    Genre?: SortOrder
+    Director?: SortOrder
+    Writer?: SortOrder
+    Actors?: SortOrder
+    Plot?: SortOrder
+    Language?: SortOrder
+    Country?: SortOrder
+    Awards?: SortOrder
+    Poster?: SortOrder
+    Metascore?: SortOrder
+    imdbRating?: SortOrder
+    imdbVotes?: SortOrder
+    imdbID?: SortOrder
+    Type?: SortOrder
+    Response?: SortOrder
+    Images?: SortOrder
   }
 
   export type FilmAvgOrderByAggregateInput = {
@@ -7021,18 +7564,64 @@ export namespace Prisma {
 
   export type FilmMaxOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
+    ComingSoon?: SortOrder
+    Title?: SortOrder
+    Year?: SortOrder
+    Rated?: SortOrder
+    Released?: SortOrder
+    Runtime?: SortOrder
+    Genre?: SortOrder
+    Director?: SortOrder
+    Writer?: SortOrder
+    Actors?: SortOrder
+    Plot?: SortOrder
+    Language?: SortOrder
+    Country?: SortOrder
+    Awards?: SortOrder
+    Poster?: SortOrder
+    Metascore?: SortOrder
+    imdbRating?: SortOrder
+    imdbVotes?: SortOrder
+    imdbID?: SortOrder
+    Type?: SortOrder
+    Response?: SortOrder
   }
 
   export type FilmMinOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
+    ComingSoon?: SortOrder
+    Title?: SortOrder
+    Year?: SortOrder
+    Rated?: SortOrder
+    Released?: SortOrder
+    Runtime?: SortOrder
+    Genre?: SortOrder
+    Director?: SortOrder
+    Writer?: SortOrder
+    Actors?: SortOrder
+    Plot?: SortOrder
+    Language?: SortOrder
+    Country?: SortOrder
+    Awards?: SortOrder
+    Poster?: SortOrder
+    Metascore?: SortOrder
+    imdbRating?: SortOrder
+    imdbVotes?: SortOrder
+    imdbID?: SortOrder
+    Type?: SortOrder
+    Response?: SortOrder
   }
 
   export type FilmSumOrderByAggregateInput = {
     id?: SortOrder
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type UserCountOrderByAggregateInput = {
@@ -7245,6 +7834,10 @@ export namespace Prisma {
     update?: XOR<XOR<CinemaUpdateToOneWithWhereWithoutSalonsInput, CinemaUpdateWithoutSalonsInput>, CinemaUncheckedUpdateWithoutSalonsInput>
   }
 
+  export type FilmCreateImagesInput = {
+    set: string[]
+  }
+
   export type TicketCreateNestedManyWithoutFilmInput = {
     create?: XOR<TicketCreateWithoutFilmInput, TicketUncheckedCreateWithoutFilmInput> | TicketCreateWithoutFilmInput[] | TicketUncheckedCreateWithoutFilmInput[]
     connectOrCreate?: TicketCreateOrConnectWithoutFilmInput | TicketCreateOrConnectWithoutFilmInput[]
@@ -7257,6 +7850,15 @@ export namespace Prisma {
     connectOrCreate?: TicketCreateOrConnectWithoutFilmInput | TicketCreateOrConnectWithoutFilmInput[]
     createMany?: TicketCreateManyFilmInputEnvelope
     connect?: TicketWhereUniqueInput | TicketWhereUniqueInput[]
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
+  export type FilmUpdateImagesInput = {
+    set?: string[]
+    push?: string | string[]
   }
 
   export type TicketUpdateManyWithoutFilmNestedInput = {
@@ -7480,6 +8082,19 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
   export type NestedDecimalFilter<$PrismaModel = never> = {
     equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
@@ -7581,6 +8196,7 @@ export namespace Prisma {
 
   export type CinemaCreateWithoutSalonsInput = {
     name: string
+    city: string
     location: string
     description?: string | null
   }
@@ -7588,6 +8204,7 @@ export namespace Prisma {
   export type CinemaUncheckedCreateWithoutSalonsInput = {
     id?: number
     name: string
+    city: string
     location: string
     description?: string | null
   }
@@ -7610,6 +8227,7 @@ export namespace Prisma {
 
   export type CinemaUpdateWithoutSalonsInput = {
     name?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -7617,6 +8235,7 @@ export namespace Prisma {
   export type CinemaUncheckedUpdateWithoutSalonsInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -7726,14 +8345,54 @@ export namespace Prisma {
   }
 
   export type FilmCreateWithoutTicketsInput = {
-    title: string
-    description?: string | null
+    ComingSoon?: boolean
+    Title: string
+    Year: string
+    Rated: string
+    Released: string
+    Runtime: string
+    Genre: string
+    Director: string
+    Writer: string
+    Actors: string
+    Plot: string
+    Language: string
+    Country: string
+    Awards: string
+    Poster: string
+    Metascore: string
+    imdbRating: string
+    imdbVotes: string
+    imdbID: string
+    Type: string
+    Response: string
+    Images?: FilmCreateImagesInput | string[]
   }
 
   export type FilmUncheckedCreateWithoutTicketsInput = {
     id?: number
-    title: string
-    description?: string | null
+    ComingSoon?: boolean
+    Title: string
+    Year: string
+    Rated: string
+    Released: string
+    Runtime: string
+    Genre: string
+    Director: string
+    Writer: string
+    Actors: string
+    Plot: string
+    Language: string
+    Country: string
+    Awards: string
+    Poster: string
+    Metascore: string
+    imdbRating: string
+    imdbVotes: string
+    imdbID: string
+    Type: string
+    Response: string
+    Images?: FilmCreateImagesInput | string[]
   }
 
   export type FilmCreateOrConnectWithoutTicketsInput = {
@@ -7771,14 +8430,54 @@ export namespace Prisma {
   }
 
   export type FilmUpdateWithoutTicketsInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    ComingSoon?: BoolFieldUpdateOperationsInput | boolean
+    Title?: StringFieldUpdateOperationsInput | string
+    Year?: StringFieldUpdateOperationsInput | string
+    Rated?: StringFieldUpdateOperationsInput | string
+    Released?: StringFieldUpdateOperationsInput | string
+    Runtime?: StringFieldUpdateOperationsInput | string
+    Genre?: StringFieldUpdateOperationsInput | string
+    Director?: StringFieldUpdateOperationsInput | string
+    Writer?: StringFieldUpdateOperationsInput | string
+    Actors?: StringFieldUpdateOperationsInput | string
+    Plot?: StringFieldUpdateOperationsInput | string
+    Language?: StringFieldUpdateOperationsInput | string
+    Country?: StringFieldUpdateOperationsInput | string
+    Awards?: StringFieldUpdateOperationsInput | string
+    Poster?: StringFieldUpdateOperationsInput | string
+    Metascore?: StringFieldUpdateOperationsInput | string
+    imdbRating?: StringFieldUpdateOperationsInput | string
+    imdbVotes?: StringFieldUpdateOperationsInput | string
+    imdbID?: StringFieldUpdateOperationsInput | string
+    Type?: StringFieldUpdateOperationsInput | string
+    Response?: StringFieldUpdateOperationsInput | string
+    Images?: FilmUpdateImagesInput | string[]
   }
 
   export type FilmUncheckedUpdateWithoutTicketsInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    ComingSoon?: BoolFieldUpdateOperationsInput | boolean
+    Title?: StringFieldUpdateOperationsInput | string
+    Year?: StringFieldUpdateOperationsInput | string
+    Rated?: StringFieldUpdateOperationsInput | string
+    Released?: StringFieldUpdateOperationsInput | string
+    Runtime?: StringFieldUpdateOperationsInput | string
+    Genre?: StringFieldUpdateOperationsInput | string
+    Director?: StringFieldUpdateOperationsInput | string
+    Writer?: StringFieldUpdateOperationsInput | string
+    Actors?: StringFieldUpdateOperationsInput | string
+    Plot?: StringFieldUpdateOperationsInput | string
+    Language?: StringFieldUpdateOperationsInput | string
+    Country?: StringFieldUpdateOperationsInput | string
+    Awards?: StringFieldUpdateOperationsInput | string
+    Poster?: StringFieldUpdateOperationsInput | string
+    Metascore?: StringFieldUpdateOperationsInput | string
+    imdbRating?: StringFieldUpdateOperationsInput | string
+    imdbVotes?: StringFieldUpdateOperationsInput | string
+    imdbID?: StringFieldUpdateOperationsInput | string
+    Type?: StringFieldUpdateOperationsInput | string
+    Response?: StringFieldUpdateOperationsInput | string
+    Images?: FilmUpdateImagesInput | string[]
   }
 
   export type UserUpsertWithoutTicketsInput = {

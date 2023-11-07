@@ -6,10 +6,11 @@ const prisma = new PrismaClient();
 class CinemaController {
   public async createCinema(req: Request, res: Response): Promise<void> {
     try {
-      const { name, location, description } = req.body;
+      const { name, city, location, description } = req.body;
       const newCinema = await prisma.cinema.create({
         data: {
           name,
+          city,
           location,
           description,
         },
@@ -45,13 +46,14 @@ class CinemaController {
   public async updateCinema(req: Request, res: Response): Promise<void> {
     try {
       const cinemaId = parseInt(req.params.id);
-      const { name, location, description } = req.body;
+      const { name, city, location, description } = req.body;
       const updatedCinema = await prisma.cinema.update({
         where: {
           id: cinemaId,
         },
         data: {
           name,
+          city,
           location,
           description,
         },
@@ -76,6 +78,25 @@ class CinemaController {
     } catch (error) {
       console.error("Error deleting cinema:", error);
       res.status(500).json({ error: "Cinema deletion failed" });
+    }
+  }
+
+  public async getAllCinemas(req: Request, res: Response) {
+    try {
+      const cityParam = req.query.city as string | undefined;
+
+      const filter = cityParam ? { city: cityParam } : {};
+
+      const cinemas = await prisma.cinema.findMany({
+        where: filter,
+      });
+
+      res.json(cinemas);
+    } catch (error) {
+      console.error("Error fetching cinemas:", error);
+      res.status(500).json({ error: "Failed to retrieve cinemas" });
+    } finally {
+      await prisma.$disconnect();
     }
   }
 }

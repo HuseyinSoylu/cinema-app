@@ -8,47 +8,67 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-model Cinema {
-  id          Int      @id @default(autoincrement())
-  name        String
-  location    String
-  description String?
-  salons      Salon[]
-}
+  model Cinema {
+    id          Int     @id @default(autoincrement())
+    name        String
+    city        String
+    location    String
+    description String?
+    salons      Salon[]
+  }
 
 model Salon {
-  id          Int      @id @default(autoincrement())
-  name        String
-  capacity    Int
+  id       Int    @id @default(autoincrement())
+  name     String
+  capacity Int
 
-  cinema      Cinema @relation(fields: [cinemaId], references: [id])
-  cinemaId    Int
+  cinema   Cinema @relation(fields: [cinemaId], references: [id])
+  cinemaId Int
 }
 
 model Film {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String?
+  id           Int      @id @default(autoincrement())
+  ComingSoon   Boolean  @default(false)
+  Title        String
+  Year         String
+  Rated        String
+  Released     String
+  Runtime      String
+  Genre        String
+  Director     String
+  Writer       String
+  Actors       String
+  Plot         String
+  Language     String
+  Country      String
+  Awards       String
+  Poster       String
+  Metascore    String
+  imdbRating   String
+  imdbVotes    String
+  imdbID       String
+  Type         String
+  Response     String
+  Images       String[]
   tickets     Ticket[]
 }
 
 model User {
-  id          Int      @id @default(autoincrement())
-  name        String   
-  email       String   @unique
-  password    String
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String
 
-  tickets     Ticket[]
+  tickets Ticket[]
 }
 
 model Ticket {
   id          Int      @id @default(autoincrement())
   filmId      Int
   userId      Int
-  seat        String  
-  price       Decimal 
-  paymentId   String   
+  seat        String
+  price       Decimal
+  paymentId   String
   purchasedAt DateTime @default(now())
   showtime    DateTime
   film        Film     @relation(fields: [filmId], references: [id])

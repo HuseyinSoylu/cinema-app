@@ -2,6 +2,9 @@ import { Request, Response } from "express";
 import { PrismaClient } from "../../prisma/generated/client";
 import { logger } from "../utils/logger";
 import { validationResult, Result, ValidationError } from "express-validator";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
+
 const prisma = new PrismaClient();
 
 class UserController {
@@ -34,24 +37,6 @@ class UserController {
       return res.status(500).json({ error: "User creation failed" });
     }
   }
-  public async getUserById(req: Request, res: Response): Promise<void> {
-    try {
-      const userId = parseInt(req.params.id);
-      const user = await prisma.user.findUnique({
-        where: {
-          id: userId,
-        },
-      });
-      if (!user) {
-        res.status(404).json({ error: "User not found" });
-        return;
-      }
-      res.json(user);
-    } catch (error) {
-      console.error("Error fetching user:", error);
-      res.status(500).json({ error: "User retrieval failed" });
-    }
-  }
 
   // Update a user's information
   public async updateUser(req: Request, res: Response): Promise<Response> {
@@ -80,10 +65,31 @@ class UserController {
           password,
         },
       });
-      res.json(updatedUser);
+      return res.json(updatedUser);
     } catch (error) {
       console.error("Error updating user:", error);
-      res.status(500).json({ error: "User update failed" });
+      return res.status(500).json({ error: "User update failed" });
+    } finally {
+      await prisma.$disconnect();
+    }
+  }
+
+  public async getUserById(req: Request, res: Response): Promise<void> {
+    try {
+      const userId = parseInt(req.params.id);
+      const user = await prisma.user.findUnique({
+        where: {
+          id: userId,
+        },
+      });
+      if (!user) {
+        res.status(404).json({ error: "User not found" });
+        return;
+      }
+      res.json(user);
+    } catch (error) {
+      console.error("Error fetching user:", error);
+      res.status(500).json({ error: "User retrieval failed" });
     }
   }
 
@@ -100,6 +106,80 @@ class UserController {
     } catch (error) {
       console.error("Error deleting user:", error);
       res.status(500).json({ error: "User deletion failed" });
+    }
+  }
+
+  public async login(req: Request, res: Response): Promise<void> {
+    const { email, password } = req.body;
+
+    try {
+      const user = await prisma.user.findUnique({
+        where: {
+          email,
+        },
+      });
+
+      if (!user) {
+        res.status(401).json({ message: "User not found" });
+        return;
+      }
+
+      const passwordMatch = await bcrypt.compare(password, user.password);
+
+      if (!passwordMatch) {
+        res.status(401).json({ message: "Invalid password" });
+        return;
+      }
+
+      const token = jwt.sign({ userId: user.id }, "octopus", {
+        expiresIn: "1h",
+      });
+
+      res.json({ user, token });
+    } catch (error) {
+      console.error("Login failed:", error);
+      res.status(500).json({ message: "Login failed" });
+    }
+  }
+
+  public async register(req: Request, res: Response): Promise<void> {
+    const { name, email, password } = req.body;
+
+    try {
+      // Check if the user with the provided email already exists
+      const existingUser = await prisma.user.findUnique({
+        where: {
+          email,
+        },
+      });
+
+      if (existingUser) {
+        res
+          .status(400)
+          .json({ message: "User with this email already exists" });
+        return; // Return early to avoid further execution
+      }
+
+      // Hash the password
+      const hashedPassword = await bcrypt.hash(password, 10);
+
+      // Create a new user
+      const newUser = await prisma.user.create({
+        data: {
+          name,
+          email,
+          password: hashedPassword,
+        },
+      });
+
+      const token = jwt.sign({ userId: newUser.id }, "your-secret-key", {
+        expiresIn: "1h", // Set your preferred token expiration time
+      });
+
+      res.json({ user: newUser, token });
+    } catch (error) {
+      console.error("Registration failed:", error);
+      res.status(500).json({ message: "Registration failed" });
     }
   }
 }

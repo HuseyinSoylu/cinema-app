@@ -6,11 +6,55 @@ const prisma = new PrismaClient();
 class FilmController {
   public async createFilm(req: Request, res: Response): Promise<void> {
     try {
-      const { title, description } = req.body; // Remove 'showtime'
+      const {
+        Title,
+        ComingSoon,
+        Year,
+        Rated,
+        Released,
+        Runtime,
+        Genre,
+        Director,
+        Writer,
+        Actors,
+        Plot,
+        Language,
+        Country,
+        Awards,
+        Poster,
+        Metascore,
+        imdbRating,
+        imdbVotes,
+        imdbID,
+        Type,
+        Response,
+        Images,
+      } = req.body;
+
       const newFilm = await prisma.film.create({
         data: {
-          title,
-          description,
+          Title,
+          ComingSoon,
+          Year,
+          Rated,
+          Released,
+          Runtime,
+          Genre,
+          Director,
+          Writer,
+          Actors,
+          Plot,
+          Language,
+          Country,
+          Awards,
+          Poster,
+          Metascore,
+          imdbRating,
+          imdbVotes,
+          imdbID,
+          Type,
+          Response,
+          Images,
         },
       });
       res.status(201).json(newFilm);
@@ -42,22 +86,70 @@ class FilmController {
   public async updateFilm(req: Request, res: Response): Promise<void> {
     try {
       const filmId = parseInt(req.params.id);
-      const { title, description } = req.body; // Remove 'showtime'
+      const {
+        Title,
+        ComingSoon,
+        Year,
+        Rated,
+        Released,
+        Runtime,
+        Genre,
+        Director,
+        Writer,
+        Actors,
+        Plot,
+        Language,
+        Country,
+        Awards,
+        Poster,
+        Metascore,
+        imdbRating,
+        imdbVotes,
+        imdbID,
+        Type,
+        Response,
+        Images,
+      } = req.body;
+
       const updatedFilm = await prisma.film.update({
         where: {
           id: filmId,
         },
         data: {
-          title,
-          description,
+          Title,
+          ComingSoon,
+          Year,
+          Rated,
+          Released,
+          Runtime,
+          Genre,
+          Director,
+          Writer,
+          Actors,
+          Plot,
+          Language,
+          Country,
+          Awards,
+          Poster,
+          Metascore,
+          imdbRating,
+          imdbVotes,
+          imdbID,
+          Type,
+          Response,
+          Images: {
+            set: Images,
+          },
         },
       });
+
       res.json(updatedFilm);
     } catch (error) {
       console.error("Error updating film:", error);
       res.status(500).json({ error: "Film update failed" });
     }
   }
+
   // Delete a film by ID
   public async deleteFilm(req: Request, res: Response): Promise<void> {
     try {
@@ -71,6 +163,35 @@ class FilmController {
     } catch (error) {
       console.error("Error deleting film:", error);
       res.status(500).json({ error: "Film deletion failed" });
+    }
+  }
+
+  public async getAllFilms(req: Request, res: Response): Promise<void> {
+    try {
+      const { comingSoon } = req.query;
+
+      let films;
+
+      if (comingSoon === "true") {
+        films = await prisma.film.findMany({
+          where: {
+            ComingSoon: true,
+          },
+        });
+      } else if (comingSoon === "false") {
+        films = await prisma.film.findMany({
+          where: {
+            ComingSoon: false,
+          },
+        });
+      } else {
+        films = await prisma.film.findMany();
+      }
+
+      res.json(films);
+    } catch (error) {
+      console.error("Error fetching films:", error);
+      res.status(500).json({ error: "Failed to retrieve films" });
     }
   }
 }
